@@ -1,0 +1,104 @@
+:root {
+  --bg: #1C2430;
+  --ink: #F2F4F6;
+  --muted: #A7B0BA;
+  --accent: #4A5665;
+  --soft: #2F3B4A;
+  --border: rgba(167, 176, 186, 0.2); 
+  --shadow: 0 14px 44px rgba(0, 0, 0, 0.35);
+  --blue-glow: #5A9DFF;
+  --green-ios: #4cd964;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg); color:var(--ink);
+  font-family:"Manrope", sans-serif;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+
+.scroll-appear { opacity:0; transform:translateY(30px); transition: 0.8s ease; }
+.scroll-appear.visible { opacity:1; transform:translateY(0); }
+
+/* HERO */
+.hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding: 0 14px; }
+.hero-title { font-family:"Bodoni Moda", serif; letter-spacing:0.16em; text-transform:uppercase; font-size:clamp(40px, 8vw, 100px); line-height:0.92; }
+.hero-subtitle { margin-top:18px; font-family:"Bodoni Moda", serif; letter-spacing:0.28em; text-transform:uppercase; color:var(--muted); font-size:14px; }
+
+/* NAV */
+.quick-nav { padding:40px 20px; }
+.quick-grid { max-width:900px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.quick-card { border:1px solid var(--border); border-radius:18px; padding:30px 15px; text-decoration:none; background:rgba(47, 59, 74, 0.4); transition: 0.3s; display:flex; flex-direction:column; align-items:center; gap:12px; color:var(--ink); }
+.quick-card i { font-size:24px; color:var(--muted); }
+.quick-card span { font-size:10px; letter-spacing:1.2px; font-weight:700; text-transform:uppercase; }
+.quick-card:hover { background:rgba(74, 86, 101, 0.5); transform:translateY(-5px); border-color:var(--blue-glow); }
+
+.section-title { text-align:center; font-family:"Bodoni Moda", serif; letter-spacing:0.12em; text-transform:uppercase; font-size:clamp(28px, 5vw, 54px); margin-bottom:60px; padding: 0 20px; }
+
+/* STRATEGY */
+.strategy, .how-it-looks, .growth { padding:100px 20px; }
+#strategyStage { max-width:800px; margin:auto; border-radius:24px; border:1px solid var(--border); background:rgba(47, 59, 74, 0.2); padding:25px; cursor:pointer; min-height: 250px; }
+.strategy-message { margin: 10px auto; padding: 18px; border-radius: 16px; background: rgba(47, 59, 74, 0.6); display: flex; gap: 15px; opacity:0; transform: translateY(15px); transition: 0.5s; border: 1px solid rgba(255,255,255,0.05); }
+.strategy-message.animate { opacity:1; transform: translateY(0); }
+.strategy-message i { color: var(--blue-glow); font-size: 18px; }
+.s-title { font-weight: 800; font-size: 13px; display:block; color: var(--ink); margin-bottom: 4px; }
+.s-body { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.tap-hint { text-align:center; margin-top:20px; font-size:11px; color:var(--muted); letter-spacing:1px; }
+
+/* VISUAL DEMO */
+.visual-demo-container { display: flex; flex-direction: column; align-items: center; gap: 60px; max-width: 1000px; margin: 0 auto; }
+
+/* IG MOCKUP */
+.ig-mockup { width: 100%; max-width: 350px; background: var(--soft); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); }
+.ig-header { display: flex; align-items: center; padding: 12px; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.ig-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(45deg, #f09433, #e6683c, #bc1888); padding: 2px; }
+.ig-avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: var(--soft); }
+.ig-username { font-weight: 700; font-size: 12px; flex: 1; }
+.ig-image { width: 100%; aspect-ratio: 1/1; background: linear-gradient(135deg, #2c3e50, #000000); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: "Bodoni Moda"; font-size: 18px; letter-spacing: 2px; }
+.ig-actions { padding: 12px; display: flex; gap: 16px; font-size: 18px; }
+.ig-caption { padding: 0 12px 20px; font-size: 13px; min-height: 90px; line-height: 1.4; }
+.cursor { animation: blink 1s infinite; color: var(--blue-glow); }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* CALENDAR */
+.calendar-mockup { width: 100%; max-width: 450px; background: rgba(47, 59, 74, 0.4); border-radius: 24px; border: 1px solid var(--border); padding: 25px; box-shadow: var(--shadow); }
+.cal-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 10px; font-weight: 800; color: var(--muted); letter-spacing: 1px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.cal-day { aspect-ratio: 1/1; background: rgba(28, 36, 48, 0.5); border-radius: 8px; border: 1px solid rgba(255,255,255,0.03); position: relative; display: flex; align-items: center; justify-content: center; }
+.day-num { position: absolute; top: 4px; left: 5px; font-size: 8px; color: rgba(167, 176, 186, 0.3); }
+.cal-post { width: 60%; height: 60%; background: var(--accent); border-radius: 5px; display: flex; align-items: center; justify-content: center; color: var(--blue-glow); font-size: 12px; opacity: 0; transform: scale(0.4); }
+.cal-post.active { animation: postPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes postPop { to { opacity: 1; transform: scale(1); } }
+
+/* IPHONE NOTIFICATION */
+.iphone-notification { width: 100%; max-width: 350px; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.2); padding: 18px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); opacity: 0; transform: translateY(-20px); transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
+.iphone-notification.active { opacity: 1; transform: translateY(0); }
+.notif-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.notif-app-icon { width: 22px; height: 22px; background: #ff3b30; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; }
+.notif-app-name { font-size: 11px; font-weight: 600; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; flex: 1; letter-spacing: 0.5px; }
+.notif-time { font-size: 11px; color: rgba(255, 255, 255, 0.5); }
+.notif-body strong { display: block; font-size: 14px; color: #fff; margin-bottom: 3px; }
+.notif-body p { font-size: 13px; color: rgba(255, 255, 255, 0.9); line-height: 1.4; }
+.notif-status { margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 11px; color: var(--green-ios); font-weight: 700; display: flex; align-items: center; gap: 6px; }
+
+/* GROWTH SECTION */
+.growth { max-width: 1100px; margin: 0 auto; text-align: center; }
+.growth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 60px; }
+.metric-card { background: rgba(47, 59, 74, 0.3); border: 1px solid var(--border); border-radius: 24px; padding: 40px 20px; transition: 0.4s; }
+.metric-card:hover { transform: translateY(-8px); border-color: var(--blue-glow); background: rgba(74, 86, 101, 0.4); }
+.metric-icon { font-size: 26px; color: var(--blue-glow); margin-bottom: 15px; }
+.metric-number { display: inline-block; font-size: 50px; font-weight: 800; color: var(--ink); font-family: "Bodoni Moda", serif; }
+.metric-unit { display: inline-block; font-size: 22px; font-weight: 700; color: var(--blue-glow); margin-left: 3px; }
+.metric-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin: 12px 0 20px; font-weight: 700; }
+.progress-bar { width: 100%; height: 5px; background: rgba(167, 176, 186, 0.1); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--blue-glow)); width: 0; transition: width 1.8s cubic-bezier(0.1, 0.5, 0.2, 1); }
+.growth-footer { max-width: 700px; margin: 0 auto; }
+.growth-footer p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 45px; }
+.cta-button { display: inline-block; padding: 20px 48px; background: var(--ink); color: var(--bg); text-decoration: none; border-radius: 100px; font-weight: 800; font-size: 12px; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.cta-button:hover { transform: scale(1.05); background: var(--blue-glow); color: #fff; box-shadow: 0 15px 45px rgba(90, 157, 255, 0.4); }
+
+@media (max-width: 850px) { 
+  .quick-grid, .growth-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .section-title { font-size: 32px; }
+}
